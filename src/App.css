@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+html{
+  font-size: 10px;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: blanchedalmond;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  background-color: darkgoldenrod;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.header h2{
+  font-size: 2.8rem;
+    margin: 0;
+}
+
+.header .search input{
+   margin-right: 8px;
+   background-color: transparent;
+   border: 2px solid rgb(238, 220, 220);
+   color:rgb(222, 226, 235);
+   font-size: 1.2rem;
+   padding: 0.5rem 1.5rem;
+   outline: none;
+   
+}
+.header .search button{
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+}
+.header span{
+  font-size: 1.7rem;
+}
+
+.vote{
+  background-color: rgb(226, 224, 198);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.vote.green{
+  color: green;
+}
+.vote.orange{
+  color: rgb(253, 135, 92);
+}
+.vote.red{
+  color: rgb(185, 0, 0);
+}
+
+
+
+
+
+.moviecontainer{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+}
+.movie{
+  cursor: pointer;
+  position: relative;
+  background: rgb(180, 179, 179);
+  margin: 1rem;
+  width: 250px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 11px -2px black;
+  overflow: hidden;    /* for hidding movie-overview overflow due to transform*/
+}
+.movie img{
+  object-fit:cover;
+  width: 100%;
+  height: 375px;
+}
+.movie-info{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-info h3{
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-info span{
+ font-size: 1.5rem;
 }
+
+.movie-overview{
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: burlywood;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  transition: transform 0.4s ease-in-out;
+  transform: translatey(100%);
+}
+
+.movie:hover .movie-overview{
+  transform: translatey(0%);
+}
+
+
+
+
